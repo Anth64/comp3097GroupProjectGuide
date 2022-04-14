@@ -1,0 +1,7 @@
+{
+  "name": "comp3097GroupProjectGuide",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
