@@ -1,9 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>add</ion-title>
+    <ion-title>Add Restaurant</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+	<form (ngSubmit)="addRestaurant()">
+		<ion-item>
+			<ion-label>Name:</ion-label>
+			<ion-input [(ngModel)]="name" type="text" name="name"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Address:</ion-label>
+			<ion-input [(ngModel)]="address" type="text" name="address"></ion-input>
+		</ion-item>
+    <ion-item>
+			<ion-label>Phone Number:</ion-label>
+			<ion-input [(ngModel)]="phoneNumber" type="text" name="phoneNumber"></ion-input>
+		</ion-item>
+    <ion-item>
+			<ion-label>Description:</ion-label>
+			<ion-input [(ngModel)]="description" type="text" name="description"></ion-input>
+		</ion-item>
+    <!--
+    <ion-item>
+			<ion-label>Tags:</ion-label>
+			<ion-input [(ngModel)]="tags" type="text" name="tags"></ion-input>
+		</ion-item>
+    -->
+		<button ion-button type="submit" block>Add</button>	
+	</form>
+	<form (ngSubmit)="goBack()">
+		 <button ion-button type="submit" block>Go Back</button>
+	</form>
 </ion-content>
