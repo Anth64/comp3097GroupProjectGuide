@@ -6,14 +6,20 @@
 
 <ion-content>
 	<ion-list>
+		<ion-item>
+			<ion-label><b>Name</b></ion-label>
+			<ion-label><b>Phone</b></ion-label>
+			<ion-label><b>Address</b></ion-label>
+			<ion-label><b>Rating</b></ion-label>
+		</ion-item>
 		<ion-item *ngFor="let rest of getList()">
 			<ion-label>{{ rest.name }}</ion-label>
 			<ion-label>{{ rest.phone }}</ion-label>
 			<ion-label>{{ rest.address }}</ion-label>
-			<ion-label>Rating: {{ rest.rating }} </ion-label>
+			<ion-label>{{ rest.rating }}</ion-label>
 			<div>
-				<button ion button type="submit" (click)="edit(rest.id)"> Edit </button><br>
-				<button ion button type="submit" (click)="delete(rest.id)" block> Delete </button>
+				<ion-button type="submit" (click)="edit(rest.id)"> Edit </ion-button><br>
+				<ion-button type="submit" color="danger" (click)="delete(rest.id)" block> Delete </ion-button>
 			</div>
 		</ion-item>
 	</ion-list>
