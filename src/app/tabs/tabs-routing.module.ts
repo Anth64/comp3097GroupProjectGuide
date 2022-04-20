@@ -20,9 +20,13 @@ const routes: Routes = [
 			{
 				path: 'restaurants',
 				loadChildren: () => import('./restaurants/restaurants.module').then( m => m.RestaurantsPageModule)
+			},
+			{
+				path: 'map',
+				loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
 			}
 		]
-  }
+  },
 ];
 
 @NgModule({
