@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NativeStorage } from  '@ionic-native/native-storage/ngx';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -11,11 +12,11 @@ export class RegisterPage implements OnInit {
 	username = '';
 	password = '';
 	registerStatus = '';
-  constructor(private nativeStorage: NativeStorage, private route: Router) { }
+  constructor(private nativeStorage: NativeStorage, private route: Router, public toastController: ToastController) { }
 
   ngOnInit() {
   }
-
+	/*
 	usernameExists(uname) {
 		let found = false;
 		this.nativeStorage.getItem(uname)
@@ -25,15 +26,18 @@ export class RegisterPage implements OnInit {
 			);
 		return found;
 	}
+	*/
 
-	register() {
+	async register() {
 		if(this.username.length === 0) {
 			this.registerStatus = 'Username field must be filled in. ';
 		}
+		/*
 		else if(this.usernameExists(this.username)) {
 			this.registerStatus = 'Username already taken! ';
 			return;
 		}
+		*/
 		else  {
 			this.registerStatus = '';
 		}
@@ -45,6 +49,18 @@ export class RegisterPage implements OnInit {
 		if(this.username.length === 0 || this.password.length === 0) {
 			return;
 		}
+
+		// Valid input if here is reached.
+		const toastRegistered = await this.toastController.create({
+			message: 'Succesfully registered!',
+			color: 'success',
+			position: 'middle',
+			duration: 5000
+		});
+
+		toastRegistered.present();
+
+		this.route.navigate(['/']);
 	}
 
 	goBack() {
