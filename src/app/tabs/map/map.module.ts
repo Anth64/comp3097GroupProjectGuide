@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +15,10 @@ import { MapPage } from './map.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MapPageRoutingModule
+    MapPageRoutingModule,
+		GoogleMapsModule,
+		HttpClientModule,
+		HttpClientJsonpModule
   ],
   declarations: [MapPage]
 })
