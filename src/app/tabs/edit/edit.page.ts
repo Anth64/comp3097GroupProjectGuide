@@ -9,6 +9,7 @@ import { Restaurant } from '../restaurant';
 export class EditPage implements OnInit {
 	id: any;
 	rest: any;
+	editStatus: any
   constructor(private route: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,6 +20,12 @@ export class EditPage implements OnInit {
 
 	editRestaurant() {
 		Restaurant.list[this.id] = this.rest;
+		for(const e in this.rest) {
+			if(this.rest[e] === '') {
+				this.editStatus = 'Fields cannot be empty!';
+				return;
+			}
+		}
 		this.route.navigate(['/tabs/restaurants']);
 	}
 

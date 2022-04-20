@@ -22,19 +22,11 @@
 			<ion-label>Description:</ion-label>
 			<ion-input required [(ngModel)]="description" type="text" name="description"></ion-input>
 		</ion-item>
-
-    <!--
-    <ion-item>
-			<ion-label>Tags:</ion-label>
-			<ion-input [(ngModel)]="tags" type="text" name="tags"></ion-input>
-		</ion-item>
-    -->
-
     <ion-item>
       <ion-label>Rating:</ion-label>
-      <ion-select placeholder="Select Rating">
-      <ion-select-option *ngFor="let n of [1,2,3,4,5];"> {{n}}</ion-select-option>
-    </ion-select>   
+      <ion-select required [(ngModel)]="rating" name="rating" type="text" placeholder="Select Rating">
+				<ion-select-option *ngFor="let n of [1,2,3,4,5];"> {{n}}</ion-select-option>
+			</ion-select>   
     </ion-item>
 
 		<ion-button color="success" type="submit" block>Add</ion-button>	
