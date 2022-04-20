@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from '../restaurant';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurants',
@@ -9,7 +10,7 @@ import { Restaurant } from '../restaurant';
 
 export class RestaurantsPage implements OnInit {
 	restaurantList = [];
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
 	}
@@ -33,6 +34,6 @@ export class RestaurantsPage implements OnInit {
 	}
 
 	edit(restId) {
-
+		this.route.navigate(['/tabs/edit/' + restId]);
 	}
 }

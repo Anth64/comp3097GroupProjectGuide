@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>edit</ion-title>
+    <ion-title>Edit</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+	<form (ngSubmit)="editRestaurant()">
+		<ion-item>
+			<ion-label>Name:</ion-label>
+			<ion-input required [(ngModel)]="rest.name" type="text" name="name"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Address:</ion-label>
+			<ion-input required [(ngModel)]="rest.address" type="text" name="address"></ion-input>
+		</ion-item>
+    <ion-item>
+			<ion-label>Phone Number:</ion-label>
+			<ion-input required [(ngModel)]="rest.phone" type="text" name="phone"></ion-input>
+		</ion-item>
+    <ion-item>
+			<ion-label>Description:</ion-label>
+			<ion-input required [(ngModel)]="rest.desc" type="text" name="desc"></ion-input>
+		</ion-item>
+    
+    <ion-item>
+      <ion-label>Rating:</ion-label>
+      <ion-select required [(ngModel)]="rest.rating" type="text" name="rating" placeholder="Select Rating">
+      <ion-select-option *ngFor="let n of [1,2,3,4,5];"> {{n}}</ion-select-option>
+    </ion-select>   
+    </ion-item>
 
+		<button ion-button type="submit" block>Save</button>	
+	</form>
+
+	<form (ngSubmit)="goBack()">
+		 <button ion-button type="submit" block>Go Back</button>
+	</form>
+	{{ editStatus }}
 </ion-content>
