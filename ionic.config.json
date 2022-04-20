@@ -1,7 +1,8 @@
 {
   "name": "comp3097GroupProjectGuide",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
