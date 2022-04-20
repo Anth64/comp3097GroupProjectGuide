@@ -8,15 +8,15 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
   styleUrls: ['./add.page.scss'],
 })
 export class AddPage implements OnInit {
-  name = ''; address = ''; phoneNumber = ''; description = '';
+  name = ''; address = ''; phoneNumber = ''; description = ''; addStatus = '';
 
-  constructor(private route: Router) {}
+  constructor(private route: Router, private nativeStorage: NativeStorage) {}
 
   ngOnInit() {
   }
 
   addRestaurant() {
-
+		console.log('!');
   }
 
   goBack() {

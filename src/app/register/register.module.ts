@@ -8,6 +8,8 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,9 @@ import { RegisterPage } from './register.page';
     IonicModule,
     RegisterPageRoutingModule
   ],
-  declarations: [RegisterPage]
+  declarations: [RegisterPage],
+	providers: [
+		NativeStorage
+	]
 })
 export class RegisterPageModule {}

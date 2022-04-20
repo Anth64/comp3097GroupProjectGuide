@@ -8,6 +8,8 @@ import { AddPageRoutingModule } from './add-routing.module';
 
 import { AddPage } from './add.page';
 
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,9 @@ import { AddPage } from './add.page';
     IonicModule,
     AddPageRoutingModule
   ],
-  declarations: [AddPage]
+  declarations: [AddPage],
+	providers: [
+		NativeStorage
+	]
 })
 export class AddPageModule {}

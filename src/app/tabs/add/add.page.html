@@ -8,20 +8,21 @@
 	<form (ngSubmit)="addRestaurant()">
 		<ion-item>
 			<ion-label>Name:</ion-label>
-			<ion-input [(ngModel)]="name" type="text" name="name"></ion-input>
+			<ion-input required [(ngModel)]="name" type="text" name="name"></ion-input>
 		</ion-item>
 		<ion-item>
 			<ion-label>Address:</ion-label>
-			<ion-input [(ngModel)]="address" type="text" name="address"></ion-input>
+			<ion-input required [(ngModel)]="address" type="text" name="address"></ion-input>
 		</ion-item>
     <ion-item>
 			<ion-label>Phone Number:</ion-label>
-			<ion-input [(ngModel)]="phoneNumber" type="text" name="phoneNumber"></ion-input>
+			<ion-input required [(ngModel)]="phoneNumber" type="text" name="phoneNumber"></ion-input>
 		</ion-item>
     <ion-item>
 			<ion-label>Description:</ion-label>
-			<ion-input [(ngModel)]="description" type="text" name="description"></ion-input>
+			<ion-input required [(ngModel)]="description" type="text" name="description"></ion-input>
 		</ion-item>
+
     <!--
     <ion-item>
 			<ion-label>Tags:</ion-label>
@@ -30,11 +31,10 @@
     -->
 
     <ion-item>
-      <ion-label>Rating: </ion-label>
+      <ion-label>Rating:</ion-label>
       <ion-select placeholder="Select Rating">
       <ion-select-option *ngFor="let n of [1,2,3,4,5];"> {{n}}</ion-select-option>
-      </ion-select>
-      
+    </ion-select>   
     </ion-item>
 
 		<button ion-button type="submit" block>Add</button>	
@@ -43,4 +43,5 @@
 	<form (ngSubmit)="goBack()">
 		 <button ion-button type="submit" block>Go Back</button>
 	</form>
+	{{ addStatus }}
 </ion-content>
