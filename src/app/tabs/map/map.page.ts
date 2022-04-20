@@ -22,7 +22,14 @@ export class MapPage implements OnInit {
         );
 	}
 
+	public static addMarker(address) {
+
+	}
+
+	public static removeMarker(address) {
+
+	}
+
   ngOnInit() {
   }
-
 }

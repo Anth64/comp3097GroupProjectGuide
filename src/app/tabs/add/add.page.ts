@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Restaurant } from '../restaurant';
+import { MapPage } from '../map/map.page';
 
 @Component({
   selector: 'app-add',
@@ -32,6 +33,7 @@ export class AddPage implements OnInit {
 			"rating": this.rating
 		}
 		Restaurant.list.push(rest);
+		MapPage.addMarker(rest.address);
 		this.route.navigate(['/tabs/restaurants']);
   }
 

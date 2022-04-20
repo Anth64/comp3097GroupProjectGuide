@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,10 +14,10 @@
 			<ion-label>Password:</ion-label>
 			<ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
 		</ion-item>
-		<button ion-button type="submit" block>Login</button>	
+		<ion-button type="submit" block>Login</ion-button>	
 	</form>
 	<form (ngSubmit)="register()">
-		 <button ion-button type="submit" block>Register</button>
+		 <ion-button type="submit" block>Register</ion-button>
 	</form>
 	<b> {{ loginStatus }} </b>
 </ion-content>
