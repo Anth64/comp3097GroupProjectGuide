@@ -22,6 +22,7 @@ export class LoginPage implements OnInit {
 			return;
 		}
 		this.loginStatus = '';
+		this.username = this.password = '';
 		this.route.navigate(['/tabs/restaurants']);
 	}
 
