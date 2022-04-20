@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content>
-  
+	<ion-list>
+		<ion-item *ngFor="let rest of getList()">
+			<ion-label>{{ rest.name }}</ion-label>
+			<ion-label>{{ rest.phone }}</ion-label>
+			<ion-label>{{ rest.address }}</ion-label>
+			<div>
+				<button ion button type="submit" (click)="edit(rest.id)"> Edit </button><br>
+				<button ion button type="submit" (click)="delete(rest.id)" block> Delete </button>
+			</div>
+		</ion-item>
+	</ion-list>
 </ion-content>

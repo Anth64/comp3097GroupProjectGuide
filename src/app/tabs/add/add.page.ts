@@ -10,13 +10,12 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 export class AddPage implements OnInit {
   name = ''; address = ''; phoneNumber = ''; description = ''; addStatus = '';
 
-  constructor(private route: Router, private nativeStorage: NativeStorage) {}
+  constructor(private route: Router) {}
 
   ngOnInit() {
   }
 
   addRestaurant() {
-		console.log('!');
   }
 
   goBack() {
